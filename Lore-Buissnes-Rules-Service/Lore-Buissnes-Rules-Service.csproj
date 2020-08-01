@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>dotnet-Lore_Buissnes_Rules_Service-4DEB6901-18FB-4DD1-A8DB-FBF78BF3FC72</UserSecretsId>
+    <RootNamespace>Lore_Buissnes_Rules_Service</RootNamespace>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Lore-Common\Models\Action.cs" Link="Model\Action.cs" />
+    <Compile Include="..\Lore-Common\Models\ActionTypes.cs" Link="Model\ActionTypes.cs" />
+    <Compile Include="..\Lore-Common\Models\BackendServers.cs" Link="Model\BackendServers.cs" />
+    <Compile Include="..\Lore-Common\Models\Frontons.cs" Link="Model\Frontons.cs" />
+    <Compile Include="..\Lore-Common\Models\Process.cs" Link="Model\Process.cs" />
+    <Compile Include="..\Lore-Common\Models\Step.cs" Link="Model\Step.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NodaTime" Version="3.1.4" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+</Project>
