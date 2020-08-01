@@ -5,10 +5,10 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["Lore-Buissnes-Rules-Service.csproj", ""]
-RUN dotnet restore "./Lore-Buissnes-Rules-Service.csproj"
+COPY ["Lore-Buissnes-Rules-Service/Lore-Buissnes-Rules-Service.csproj", "Lore-Buissnes-Rules-Service/"]
+RUN dotnet restore "Lore-Buissnes-Rules-Service/Lore-Buissnes-Rules-Service.csproj"
 COPY . .
-WORKDIR "/src/."
+WORKDIR "/src/Lore-Buissnes-Rules-Service"
 RUN dotnet build "Lore-Buissnes-Rules-Service.csproj" -c Release -o /app/build
 
 FROM build AS publish
